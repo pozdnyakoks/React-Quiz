@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: #F5F7FB;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: #293264;
+}
+
+ul {
+    list-style: none;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+
+button {
+    font-family: 'Inter';
+    border: none;
+    color: #F5F7FB; 
+}
+
+
+
+.blue {
+    animation-name: left;
+    animation-duration: 4s;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;   
+}
+.yellow {
+    animation-name: right;
+    animation-duration: 2s;
+   position: fixed;
+   top: 0;
+   right: 0; 
+   z-index: -1;
+}
+
+main {
+    padding: 20px 0;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.start {
+    animation-name: start;
+    animation-duration: 2s;
+    position: absolute;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes start {
+    from {
+        transform: translateY(-500%)
+    } to {
+        transform: translateY(0%)
+        
+    }
+}
+
+@keyframes right {
+       from {
+        transform: translateX(500%)
+    } to {
+        transform: translateX(0%)
+        
+    }
+}
+@keyframes left {
+       from {
+        transform: translateX(-500%)
+    } to {
+        transform: translateX(0%)
+        
+    }
+}
+
+@keyframes game {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    } 
+    100% {
+        opacity: 1;
+        transform: scale(1);  
+    }
+}
+
+.quiz-container {
+    animation-name: game;
+    animation-duration: 1s;
+}
+
+.title {
+    font-size: 31.25px;
+    line-height: 37px;
+    margin-bottom: 11px;
+}
+
+.desc {
+    font-family: 'Inter';
+    margin-bottom: 29px;
+}
+
+.startBtn {
+     transition: .3s ease;
+    padding: 18px 35px; 
+    line-height: 19px;
+    background-color: #4D5B9E;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.questionsList {
+   min-width: 400px;
+   max-width: 700px;
+}
+
+.question {
+    line-height: 19px;
+}
+
+
+
+.question p {
+    margin-bottom: 12px;
+}
+
+.answersList {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 15px;
+}
+
+.answer {
+    text-align: center;
+    cursor: pointer;
+    padding: 4px 15px;
+    border: 1px solid #293264;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-size: 10.24px;
+    line-height: 12px;
+    transition: .3s ease-in-out;
+}
+
+.answer.checked {
+    background-color: #D6DBF5;
+    border-color: #D6DBF5;
+}
+.answer.right {
+    background-color: #94D7A2;;
+    border-color: #94D7A2;;
+}
+
+.answer.wrong {
+    opacity: 0.5
+}
+.answer.checked.wrong {
+    background-color: #F8BCBC;;
+    border-color: #F8BCBC;;
+}
+
+hr {
+    border: 1px solid #DBDEF0;
+    margin-bottom: 16px;
+}
+
+.final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkBtn {
+    transition: .3s ease;
+    font-weight: 600;
+    font-size: 10.24px;
+    line-height: 12px;
+    padding: 11px 21px;
+    background-color: #4D5B9E;
+    border-radius: 10px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.calcAnswers {
+     animation-name: game;
+    animation-duration: 1s;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 12.8px;    
+    color: #293264;
+    margin-right: 15px;
+}
+
+.error {
+    color: red;
+    margin-right: 10px;
+}
+
+@keyframes error {
+    0% {
+        transform: translateX(5px);
+        transform: skew(5deg, -5deg)
+        
+    } 50% {
+        transform: translateX(-5px);
+        transform: skew(-5deg, 5deg)
+        
+            
+    } 100% {
+        transform: translateX(0); 
+        transform: skew(0deg, 0deg)
+           
+    }
+}
+
+.wrong {
+    animation-name: error;
+    animation-duration: 0.3s;
+    color: red;
+}
+
+.checkBtn:hover, .startBtn:hover {
+    opacity: 0.7;
+}

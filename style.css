@@ -27,10 +27,8 @@ ul {
 button {
     font-family: 'Inter';
     border: none;
-    color: #F5F7FB; 
+    color: #F5F7FB;
 }
-
-
 
 .blue {
     animation-name: left;
@@ -38,20 +36,20 @@ button {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: -1;   
+    z-index: -1;
 }
+
 .yellow {
     animation-name: right;
     animation-duration: 2s;
-   position: fixed;
-   top: 0;
-   right: 0; 
-   z-index: -1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
 }
 
 main {
     padding: 20px 0;
-    /* height: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,26 +69,30 @@ main {
 @keyframes start {
     from {
         transform: translateY(-500%)
-    } to {
+    }
+
+    to {
         transform: translateY(0%)
-        
     }
 }
 
 @keyframes right {
-       from {
+    from {
         transform: translateX(500%)
-    } to {
+    }
+
+    to {
         transform: translateX(0%)
-        
     }
 }
+
 @keyframes left {
-       from {
+    from {
         transform: translateX(-500%)
-    } to {
+    }
+
+    to {
         transform: translateX(0%)
-        
     }
 }
 
@@ -98,14 +100,17 @@ main {
     0% {
         opacity: 0;
         transform: scale(0);
-    } 
+    }
+
     100% {
         opacity: 1;
-        transform: scale(1);  
+        transform: scale(1);
     }
 }
 
 .quiz-container {
+    margin: 0 auto;
+    padding: 0 10px;
     animation-name: game;
     animation-duration: 1s;
 }
@@ -122,8 +127,8 @@ main {
 }
 
 .startBtn {
-     transition: .3s ease;
-    padding: 18px 35px; 
+    transition: .3s ease;
+    padding: 18px 35px;
     line-height: 19px;
     background-color: #4D5B9E;
     border-radius: 15px;
@@ -131,8 +136,8 @@ main {
 }
 
 .questionsList {
-   min-width: 400px;
-   max-width: 700px;
+    min-width: 300px;
+    max-width: 700px;
 }
 
 .question {
@@ -167,17 +172,23 @@ main {
     background-color: #D6DBF5;
     border-color: #D6DBF5;
 }
+
 .answer.right {
-    background-color: #94D7A2;;
-    border-color: #94D7A2;;
+    background-color: #94D7A2;
+    ;
+    border-color: #94D7A2;
+    ;
 }
 
 .answer.wrong {
     opacity: 0.5
 }
+
 .answer.checked.wrong {
-    background-color: #F8BCBC;;
-    border-color: #F8BCBC;;
+    background-color: #F8BCBC;
+    ;
+    border-color: #F8BCBC;
+    ;
 }
 
 hr {
@@ -204,11 +215,11 @@ hr {
 }
 
 .calcAnswers {
-     animation-name: game;
+    animation-name: game;
     animation-duration: 1s;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 12.8px;    
+    font-size: 12.8px;
     color: #293264;
     margin-right: 15px;
 }
@@ -222,16 +233,16 @@ hr {
     0% {
         transform: translateX(5px);
         transform: skew(5deg, -5deg)
-        
-    } 50% {
+    }
+
+    50% {
         transform: translateX(-5px);
         transform: skew(-5deg, 5deg)
-        
-            
-    } 100% {
-        transform: translateX(0); 
+    }
+
+    100% {
+        transform: translateX(0);
         transform: skew(0deg, 0deg)
-           
     }
 }
 
@@ -241,6 +252,7 @@ hr {
     color: red;
 }
 
-.checkBtn:hover, .startBtn:hover {
+.checkBtn:hover,
+.startBtn:hover {
     opacity: 0.7;
 }
